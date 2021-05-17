@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color:rgba(48, 194, 87, 1);
+    }
+  </style>
+  <script>
+    function fliptonum() {
+	    var randomnum = Math.floor(Math.random() * 13)+1;
+      if(randomnum==1){
+        randomnum = "A";
+      }else if(randomnum==11){
+        randomnum = "J";
+      }else if(randomnum==12){
+        randomnum = "Q";
+      }else if(randomnum==13){
+        randomnum = "K";
+      }
+      document.getElementById("card1").style.fill = "#ffffff";
+      document.getElementById("text1").innerHTML = randomnum;
+    }
+    function flipback() {
+	    document.getElementById("card1").style.fill = "#ed3232";
+      document.getElementById("text1").innerHTML = "?";
+    }
+  </script>
+</head>
+<body>
+  <button type="button" onclick="fliptonum()">1Flip</button>
+  <button type="button" onclick="flipback()">2Flip</button>
+  <svg width="250" height="400">
+    <rect id="card1" width="240" height="390" fill="#ed3232" stroke="black" stroke-width="10px" x="5" y="5"/>
+    <text id="text1" fill="#000000" font-size="70" font-family="Verdana" x="105" y="220">?</text>  
+  </svg>
+</body>
+</html>
